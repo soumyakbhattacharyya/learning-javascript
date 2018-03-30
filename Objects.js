@@ -71,7 +71,7 @@ Object.preventExtensions(newObj);
 // can not add new property
 // newObj.density = "low";
 
-var newObj1 = {"a":"val1"};
+var newObj1 = { "a": "val1" };
 
 Object.seal(newObj1);
 
@@ -80,10 +80,41 @@ Object.seal(newObj1);
 
 Object.freeze(newObj1);
 
+// hereafter can not add new property, can not modify existing property descriptors or the value 
 
 
 
+// get and set example
+
+var myObject = {
+    a: undefined
+};
+
+print(myObject.a);
+
+print(myObject.b);
 
 
+var myAnotherObj = {
+    // define getter
+    get propertyOne() {
+        return 8;
+    },
 
+    get propertyTwo() {
+        return 7;
+    },
 
+    propertyThree: "value3"
+};
+
+print(myAnotherObj.propertyOne);
+
+// in operator to assert if a property is part of an object 
+
+// if (propertyOne in myAnotherObj) { print("yes"); } // this fails as property is essentially a getter function
+
+if ("propertyThree" in myAnotherObj) { print("this will be yes"); }
+
+// equivalent of above
+if (myAnotherObj.hasOwnProperty("propertyThree")) { print("yes again"); }
