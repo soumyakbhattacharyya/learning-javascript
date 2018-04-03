@@ -47,5 +47,31 @@ var Car = mixin(Vehicle, {
 
 Car.drive();
 
-// implicit mixin 
+// default object initialization
+
+var myObj = {};
+
+console.log(myObj);
+
+var employee = {};
+employee.firstName = "John";
+
+// constructor function
+function Employee(firstName, lastName){
+    // note, first and last lines in comment are inserted 
+    // by JS engine if new keyword is being used
+    // this = {} // gets initialized
+    this.firstName = firstName;
+    this.lastName = lastName;
+
+    
+
+    // return this; // this is returned
+}
+
+var newEmp = Employee("marshal", "pluto");
+
+// difference between regular function and ctor
+
+
 
