@@ -27,5 +27,13 @@ if (newObj1.__proto__ === newObj2.__proto__){
 newObj1.__proto__.newProperty = "withValue";
 
 // becomes available to newObj2
+// because if a variable is unavailable with an object, JS looks into the prototype object to find the property
 
 console.log(newObj2.newProperty);
+
+
+// prototype object's constrcutor property points to the function of which it (the object) is the prototype
+console.log(doSometing.prototype.constructor);
+
+// creating object using Object function
+var newObjByObjectFunc = new Object();
