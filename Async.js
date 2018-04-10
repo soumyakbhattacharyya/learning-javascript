@@ -84,8 +84,16 @@ desktopBrowser.ticker(tick);
 
 
 // concept : promise state
-// promise has following states pending, resolved, fulfilled and rejected
+// promise has following states pending, fulfilled and rejected
 // a promise starts in pending state
 // it moves into fulfilled state if resolution happen immediately
-// it moves into resolve state if it is suppose to resolve another chained promise
+// it moves into wait state if it is suppose to resolve another chained promise
 // it moves into reject state if it gets into error situation
+// after a promise is fulfilled or rejected it's value can never be changed
+
+
+// chainging promise
+
+var deploymentSequence = Promise.resolve("deployable-available")
+                                .then(function(output){output += " binary-downloaded "; console.log(output); return output;})
+                                .then(function(output){output += " copied to server "; console.log(output); return output;});
