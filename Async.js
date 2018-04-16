@@ -94,6 +94,51 @@ desktopBrowser.ticker(tick);
 
 // chainging promise
 
-var deploymentSequence = Promise.resolve("deployable-available")
+var deploymentSequence = Promise.resolve(slowFunction())
                                 .then(function(output){output += " binary-downloaded "; console.log(output); return output;})
                                 .then(function(output){output += " copied to server "; console.log(output); return output;});
+
+// promise api
+// new Promise(function(resolve, reject){resolve(resolvableFunction); reject(onError)}) : creates new promise
+// promise.then(function(resolvedVal){}) : in case the promise resolves this gets executed
+// promise.catch(onRejected) : in case a promise is rejected catch api accepts the callback which needs to be invoked in this situation
+// Promise.resolve(function(){}) & Promise.reject(function(){}) : convinient methods which accepts functions that are being invoked on resolve and rejected
+
+// concept deepdive 
+
+// :: event loop ::
+
+// All execution environments has a mechanism in them that handles executing multiple chunks of your program over time.
+// This mechanism invokes JS engine. The mechanism is being called the "event loop."
+// In other words, the JS engine has had no innate sense of time, but has instead been an on-demand execution environment for any arbitrary snippet of JS. 
+// It's the surrounding environment that has always scheduled "events" (JS code executions).
+
+// `eventLoop` is an array that acts as a queue (first-in, first-out)
+// following snippet demonstrates a basic implementation of event queue
+function Event(name) {this.name = name;}
+var eventLoop = [];
+eventLoop.push(new Event("first"));
+eventLoop.push(new Event("second"));
+
+// keep going "forever"
+while (true) {
+	// perform a "tick"
+	if (eventLoop.length > 0) {
+		// get the next event in the queue
+		var event = eventLoop.shift();
+
+		// now, execute the next event
+		try {
+			console.log("executing " +event.name);
+		}
+		catch (err) {
+			reportError(err);
+		}
+	}
+}
+
+// :: parralal threading ::
+// parallel threading is accomplished via the concept of process and threads
+// multiple threads can share the memory space of a process
+// on contrary event loop ensures that tasks are executed in sequence such that there is a serial access to shared memory
+
