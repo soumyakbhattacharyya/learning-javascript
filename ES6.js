@@ -70,7 +70,7 @@ funcs.forEach(func => {
 
 const b = 5;
 
-if (true){
+if (true) {
     const b = 6;
     console.log(b);
 }
@@ -81,7 +81,7 @@ console.log(b);
 
 {
 
-    function foo(){console.log(2+3);}
+    function foo() { console.log(2 + 3); }
 
 }
 
@@ -92,28 +92,56 @@ console.log(b);
 // ... is used as spread/rest operator. spreads splits an array and map the elements to variables that a function accepts
 // rest will collate all variables into an array
 
-function spreader(x,y,z) {
-	console.log( x, y, z );
+function spreader(x, y, z) {
+    console.log(x, y, z);
 }
 
-spreader( ...[1,2,3] );
+spreader(...[1, 2, 3]);
 
 
 function rester(...z) {
-	console.log( z );
+    console.log(z);
 }
 
-rester(1,2,3);
+rester(1, 2, 3);
 
 // default parameter value
 
 var w = 5
-function defaultGuy(x = w + 5, y = x+9){
-    console.log(x,y);
+function defaultGuy(x = w + 5, y = x + 9) {
+    console.log(x, y);
 }
 
 defaultGuy();
 
+// additionally, it is possible to compute the default value by invoking a function as shown below
+function anotherDefaulter(x = bar(w)) { console.log(x); }
+function bar(anything) { return anything + " food items"; }
+anotherDefaulter();
+
+// destructuring
+// with this the return value maps neatly as a json/array element
+function destructuringDemo() {
+    return {
+        "a": "valueOfA",
+        "m": "valueOfM"
+    };
+}
+
+// var outcome = destructuringDemo();
+
+// console.log(outcome.a);
+
 // object property assignment pattern
+
+// 1. if object property of the returned object maches to that of outcome, it is possible to use a simpler notation
+ var { a: abc, m: m } = destructuringDemo();
+// same effect
+// var { a, m } = destructuringDemo();
+
+console.log(abc, m);
+
+// Note: {"a":"value"} is a target:source declaration, however destrucuring works opposite, there source:target is the way to go
+
 
 
