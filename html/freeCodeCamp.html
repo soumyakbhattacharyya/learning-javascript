@@ -1,0 +1,59 @@
+<!--using an external font-->
+<!-- if this link is commented out which essentially means the Lobster font is available 
+     no more, the solution will fall back on other inline fonts
+     ... comment out the link and observe the change
+-->
+<!-- link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css" -->
+<!-- the following element uses css selector to make all h2 inside the document blue -->
+<!-- also, make sure that you use {} to enclose the style attributes -->
+<!-- img tags downloads and shows image on the page. Also, alt stands for a text which is displayed 
+     in case the image is not available -->
+<img class="smaller-image thin-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="Author standing on a beach with two thumbs up. ">
+<style>h2 {color: blue;}</style>
+<!--CSS classes are reusable definition
+    a class definition starts with .
+    while referring from the target html element,
+    the class has to be mentioned inside ""
+
+    note, color and font-size as two attributes for the para-style
+
+    a css border has three primary attributes, color, thickness in pixel and style
+    in following segment, thin-green-border examplifes this
+-->
+<style>
+    .para-style{
+        color: maroon;
+        font-size: 16px;
+        font-family: Monospace;
+    }
+    .h1-style{
+        font-family: Lobster, 'Courier New', Courier, monospace
+    }
+    .smaller-image {
+        width: 100px;
+    }
+    .thin-green-border {
+        border-color: green;
+        border-width: 10px;
+        border-style: solid;
+        border-radius: 10px; /* border radius makes the round at the corner of the border */
+
+  }
+</style>
+<h1 class="h1-style">Awesome Planner App</h1>
+<!--The style that is responsible for the color of an element's text is the "color" style.-->
+<!--This is the inline way of specifying the style of an element-->
+<h2>Plan your day</h2>
+<!--This element tells the browser about the structure of your website. 
+    h1 elements are often used for main headings, 
+    while h2 elements are generally used for subheadings. 
+    There are also h3, h4, h5 and h6 elements to indicate different 
+    and new sections.-->
+<p class="para-style">This is a simple paragraph that summarizes the benefit of an App. 
+    You can plan your day using this app. Also your daily routin simplifies.</p>    
+<!--p elements are the preferred element for normal-sized paragraph text on websites. 
+    P is short for "paragraph".-->
+
+<!-- following is an exmaple of a paragraph with anchor tag-->
+<!-- an anchor tag specifies an url and an alternative text to the url-->
+<p>Here's a <a href="http://freecatphotoapp.comg">cat photos</a> for you to follow.</p>    
