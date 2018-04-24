@@ -9,7 +9,11 @@
 <!-- img tags downloads and shows image on the page. Also, alt stands for a text which is displayed 
      in case the image is not available -->
 <img class="smaller-image thin-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="Author standing on a beach with two thumbs up. ">
-<style>h2 {color: blue;}</style>
+<style>
+    h2 {
+        color: blue;
+    }
+</style>
 <!--CSS classes are reusable definition
     a class definition starts with .
     while referring from the target html element,
@@ -21,24 +25,63 @@
     in following segment, thin-green-border examplifes this
 -->
 <style>
-    .para-style{
+    .para-style {
         color: maroon;
         font-size: 16px;
         font-family: Monospace;
     }
-    .h1-style{
+
+    .h1-style {
         font-family: Lobster, 'Courier New', Courier, monospace
     }
+
     .smaller-image {
         width: 100px;
     }
+
     .thin-green-border {
         border-color: green;
         border-width: 10px;
         border-style: solid;
-        border-radius: 10px; /* border radius makes the round at the corner of the border */
+        border-radius: 10px;
+        /* border radius makes the round at the corner of the border */
+    }
 
-  }
+    .silver-background {
+        background-color: silver;
+    }
+
+    /* # operator refers to id attribute*/
+
+    #user-form {
+        background-color: royalblue;
+    }
+
+    .yellow-box {
+        background-color: yellow;
+        padding: 10px;
+    }
+
+    .red-box {
+        background-color: red;
+        padding: 60px;
+    }
+
+    .green-box {
+        background-color: green;
+        padding: 20px;
+    }
+
+    .margin-factor {
+        margin: 20px
+    }
+
+    .box {
+        border-style: solid;
+        border-color: black;
+        border-width: 5px;
+        text-align: center;
+    }
 </style>
 <h1 class="h1-style">Awesome Planner App</h1>
 <!--The style that is responsible for the color of an element's text is the "color" style.-->
@@ -49,11 +92,83 @@
     while h2 elements are generally used for subheadings. 
     There are also h3, h4, h5 and h6 elements to indicate different 
     and new sections.-->
-<p class="para-style">This is a simple paragraph that summarizes the benefit of an App. 
-    You can plan your day using this app. Also your daily routin simplifies.</p>    
+<p class="para-style">This is a simple paragraph that summarizes the benefit of an App. You can plan your day using this app. Also your daily routin
+    simplifies.
+</p>
 <!--p elements are the preferred element for normal-sized paragraph text on websites. 
     P is short for "paragraph".-->
 
 <!-- following is an exmaple of a paragraph with anchor tag-->
 <!-- an anchor tag specifies an url and an alternative text to the url-->
-<p>Here's a <a href="http://freecatphotoapp.comg">cat photos</a> for you to follow.</p>    
+<p>Here's a
+    <a href="http://freecatphotoapp.comg">cat photos</a> for you to follow.</p>
+<!-- following is an exmaple of unordered list -->
+<!-- each element inside the unordered list is signified with a li-->
+
+<!--div or devision works as general purpose container-->
+<div class="silver-background">
+    <ul>
+        <li>first task</li>
+        <li>second task</li>
+    </ul>
+
+    <!-- following is an exmaple of ordered list -->
+    <ol>
+        <li>Garfield</li>
+        <li>Sylvester</li>
+    </ol>
+</div>
+
+<!-- input element creation-->
+<form action="/abc.com" id="user-form">
+    <input type="text" placeholder="this is a simple placeholder" required>
+    <!-- radio buttons are used to accept one choice out of multiple options-->
+    <label>
+        <input type="radio" name="indoor-outdoor" checked> Indoor</label>
+    <label>
+        <input type="radio" name="indoor-outdoor"> Outdoor</label>
+    <label>
+        <input type="checkbox" name="personality" checked> Loving</label>
+    <label>
+        <input type="checkbox" name="personality"> Lazy</label>
+    <label>
+        <input type="checkbox" name="personality"> Energetic</label>
+    <button type="submit">Submit</button>
+</form>
+
+<!-- html styling -->
+<!-- Three important properties 
+    control the space that surrounds each HTML element: padding, margin, and border.-->
+<!-- padding controls the space between the element and it's border -->
+<!-- margin controls the spacing between the element and it's surrounding element -->
+<div class="yellow-box">
+    <h5 class="green-box box margin-factor">hello</h5>
+    <h5 class="red-box box">world</h5>
+</div>
+
+
+
+
+<style>
+    /* every html element has a body element */
+
+    body {
+        background-color: black;
+        font-family: Monospace;
+        color: green;
+    }
+
+    #orange-text {
+        color: orange;
+    }
+
+    .pink-text {
+        color: pink !important;
+    }
+
+    .blue-text {
+        color: blue;
+    }
+</style>
+<!-- CSS override rule: !important > inline style > id based style > class based style -->
+<h1 id="orange-text" class="pink-text blue-text" style="color: white">Hello World!</h1>
