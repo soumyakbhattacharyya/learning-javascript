@@ -1,5 +1,7 @@
 "use strict";
 
+
+
 // var cities = ['Tokyo', 'London', 'Boston', 'Berlin', 'Chicago', 'New York'];
 
 // // in this code, the method is being passed as the callback function
@@ -141,4 +143,20 @@ while (true) {
 // parallel threading is accomplished via the concept of process and threads
 // multiple threads can share the memory space of a process
 // on contrary event loop ensures that tasks are executed in sequence such that there is a serial access to shared memory
+
+// JS never share data accross threads. However, if two asyncrounous funcntions mutates same variable, the outcome is non - deterministic
+
+// :: run to completion ::
+// whenever a function starts, it continues till it get resolved. it is not possible to pause an function execution
+
+
+// :: concurrency ::
+// concurrency is a process level parallelism
+// Concurrency is when two or more chains of events interleave over time, such that from a high-level perspective, 
+// they appear to be running simultaneously (even though at any given moment only one event is being processed).
+
+// :: non - interacting ::
+// when two processes execute without interfaring with each other they are termed non - interacting
+
+// :: callback ::
 
