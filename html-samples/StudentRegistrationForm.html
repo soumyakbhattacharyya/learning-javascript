@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<!-- head section -->
+
+<head>
+    <title>Student Registration Form</title>
+</head>
+
+<body>
+
+    <h1>Registration Form</h1>
+    <p>Basic registration form for the students in ACME College</p>
+
+    <form action="/students/{id}" method="post" target="_blank">
+        <fieldset>
+            <legend>Personal Information</legend>
+            First Name :
+            <input type="text" id="firstName" />
+            <br/> Last Name:
+            <input type="text" id="lastName" name="lastName" />
+            <br/> Unique Code :
+            <input type="password" id="password" name="password" />
+        </fieldset>
+        <fieldset>
+            <legend>Course</legend>
+            <select name="course" size="4" multiple="true">
+                <option value="electronics">ECE</option>
+                <option value="electrical">ELECT</option>
+                <option value="civil">CIVIL</option>
+                <option value="architecture">ARCH</option>
+            </select>
+            <br/>
+            <textarea>
+                Please provide a justification of admission
+            </textarea>
+            <br/>
+            Sponshorships
+            <input list="sponsorships">
+            <datalist id="sponsorships">
+                <option value="Self">
+                <option value="Loan">
+                <option value="Scholarship">
+            </datalist>
+            <br>
+            Male            
+            <input type="radio" name="gender" value="male">
+            Female
+            <input type="radio" name="gender" value="female">
+
+        </fieldset>
+        <input type="submit" />
+        <input type="reset" />
+        <!-- resets a form elements to all default value-->
+    </form>
+
+</body>
+
+</html>
