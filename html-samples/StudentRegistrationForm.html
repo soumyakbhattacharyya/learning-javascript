@@ -1,9 +1,32 @@
 <!DOCTYPE html>
-<html>
+<!-- indicates browser to display the page following html5 syntax -->
+<html lang="en-US">
 
 <!-- head section -->
 
 <head>
+    <meta charset="UTF-8" />
+    <!-- indicates the character to be used -->
+    <meta http-equiv="refresh" content="3; redirect.html" />
+    <!-- indicates where the page needs to redirect after 3 seconds -->
+
+    <meta description="in 200 characters you can explain the purpose of this page" />
+    <meta name="keyword" content="registration,student" />
+    <!-- helps search engines to find this page -->
+    <meta name="robot" content="index,follow" />
+    <!-- indicates how search engine should index content -->
+    <!-- index = if this page has to be indexed
+         follow = if all the hyperlinks that are being mentioned inside this page should be indexed too -->
+
+    <script src="functions.js" />
+
+    <base href="http://localhost/root" />
+    <!-- works as a root location with respect to which all other resources are being found out-->
+
+    <!-- expectation is style.css will be available under base location root -->
+    <link rel="stylesheet" href="style.css" />
+
+
     <title>Student Registration Form</title>
 </head>
 
@@ -21,38 +44,90 @@
             <input type="text" id="lastName" name="lastName" />
             <br/> Unique Code :
             <input type="password" id="password" name="password" />
+            <br> Male
+            <input type="radio" name="gender" value="male"> Female
+            <input type="radio" name="gender" value="female">
+            <br> Select your favorite color:
+            <input type="color" name="favcolor">
+
+            <br/> Enter birthday
+            <input type="date" name="bday" min="2000-12-12">
+
+            <br> Personal Email Id
+            <input type="email" name="email">
+            <br> Hobbies:
+            <input type="number" name="numOfHobbies" min="0" max="3" step="1">
+
+            <!-- form attributes -->
+            <!-- reference : https://www.w3schools.com/html/html_form_attributes.asp -->
+            <!-- summary -->
+            <!-- 
+                value = shows the default value
+                readonly = makes the input field readonly
+                disabled = unchangeable/unclickable and the value is not being sent to server
+                size = size in character of the input field
+                maxlength = maximum length of an input fields
+                autocomplete = browser tries to auto complete an entry based on what user entered before
+                autofocus = indicates whenever the page loads the field gets automatically focussed  
+                novalidate = a form attributes which indicates bypassing validation completely
+                
+                Note: following attributes are to override corresponding form attribute
+                formaction
+                formenctype
+                formmethod
+                formnovalidate
+                formtarget
+                
+                height and width : indicates size of the image, on not being mentioned, page flickers when  UI loads
+                list : specific input type, which can source data from datalist
+                min and max : applicable bounds on number, range, date, datetime-local, month, time and week.
+                multiple
+                pattern (regexp)
+                placeholder : text which appears inside an input type, by default
+                required
+                step
+            -->
+
         </fieldset>
         <fieldset>
-            <legend>Course</legend>
+            <legend>Course Related</legend>
             <select name="course" size="4" multiple="true">
                 <option value="electronics">ECE</option>
                 <option value="electrical">ELECT</option>
                 <option value="civil">CIVIL</option>
                 <option value="architecture">ARCH</option>
             </select>
-            <br/>
+            <br/> Why are you interested
+            <br>
             <textarea>
                 Please provide a justification of admission
             </textarea>
-            <br/>
-            Sponshorships
+            <br/> Sponshorships
             <input list="sponsorships">
             <datalist id="sponsorships">
                 <option value="Self">
-                <option value="Loan">
-                <option value="Scholarship">
+                    <option value="Loan">
+                        <option value="Scholarship">
             </datalist>
-            <br>
-            Male            
-            <input type="radio" name="gender" value="male">
-            Female
-            <input type="radio" name="gender" value="female">
+            <br/> Delivery method
+            <br/> Online
+            <input type="checkbox" name="deliveryMethod" value="online" /> Offline
+            <input type="checkbox" name="deliveryMethod" value="offline" />
+
+
+
 
         </fieldset>
         <input type="submit" />
         <input type="reset" />
         <!-- resets a form elements to all default value-->
     </form>
+
+    <fieldset>
+        <legend>Security Colored Image Display</legend>
+
+
+    </fieldset>
 
 </body>
 
